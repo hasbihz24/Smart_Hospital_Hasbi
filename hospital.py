@@ -124,6 +124,7 @@ with st.form("triage_form"):
 
     with open("history.html", "r", encoding = "utf-8") as f:
         history = f.read()
+    st.markdown(history, unsafe_allow_html=True)
     
     ch1, ch2, ch3, _ = st.columns(4)
     with ch1:
@@ -134,6 +135,11 @@ with st.form("triage_form"):
         asthma = st.checkbox("Asthma")
 
     st.markdown("<br>", unsafe_allow_html = True)
+
+    with open("patient.html", "r", encoding="utf-8") as f:
+        patient_age = f.read()
+        
+    st.markdown(patient_age, unsafe_allow_html=True)
 
     col_age, col_gen = st.columns(2)
     with col_age:
